@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-LojaVirtualApplication<lojavirtual>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.itbam.lojavirtual.LojaVirtualApplication",
+            "projectName": "lojavirtual",
+            "args": ""
+        }
+    ]
+}

@@ -1,0 +1,27 @@
+version: '2.4'
+services: 
+  back:
+    image: maven:3.6.1-jdk-8-slim
+    volumes: 
+      - ./back:/back
+      - ./docker/maven/run_cmd.sh:/run_cmd.sh
+      - ./docker/maven/.m2:/root/.m2
+    command: /run_cmd.sh
+    env_file: 
+      - RUN_CMD.env
+    ports: 
+      - 8080:8080
+  front:
+    build:
+      dockerfile: node.dockerfile
+      context: ./docker/node
+    image: node_yarn
+    volumes: 
+      - ./front:/front
+      - ./docker/node/node_modules/:/front/node_modules/
+      - ./docker/node/run_cmd.sh:/run_cmd.sh
+    command: /run_cmd.sh
+    env_file: 
+      - RUN_CMD.env
+    ports:
+      - 3000:3000

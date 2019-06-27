@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --config config/webpack.dev.js --inline --hot --progress --port 3000",
+    "start": "webpack-dev-server --config config/webpack.dev.js --inline --hot --progress --host 0.0.0.0 --port 3000",
     "build": "NODE_ENV=production webpack --config config/webpack.prod.js"
   },
   "dependencies": {

@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --config config/webpack.dev.js --inline --hot --progress --port 8080",
+    "start": "webpack-dev-server --config config/webpack.dev.js --inline --hot --progress --port 3000",
     "build": "NODE_ENV=production webpack --config config/webpack.prod.js"
   },
   "dependencies": {
@@ -23,6 +23,7 @@
     "core-js": "~2.5",
     "materialize-css": "^1.0.0",
     "rxjs": "~6.3",
+    "rxjs-compat": "^6.5.2",
     "zone.js": "~0.8"
   },
   "devDependencies": {

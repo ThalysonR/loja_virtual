@@ -24,5 +24,5 @@ public class Produto {
     @NotNull
     private String descricao;
     @NotNull
-    private Float preco;
+    private Double preco;
 }

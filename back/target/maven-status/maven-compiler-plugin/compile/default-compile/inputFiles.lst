@@ -1,5 +1,6 @@
 /home/tcastro/Teste/itbam/back/src/main/java/com/itbam/lojavirtual/repository/ProdutoRepository.java
 /home/tcastro/Teste/itbam/back/src/main/java/com/itbam/lojavirtual/LojaVirtualApplication.java
+/home/tcastro/Teste/itbam/back/src/main/java/com/itbam/lojavirtual/services/ProdutoService.java
 /home/tcastro/Teste/itbam/back/src/main/java/com/itbam/lojavirtual/controllers/ProdutoController.java
 /home/tcastro/Teste/itbam/back/src/main/java/com/itbam/lojavirtual/domain/Produto.java
 /home/tcastro/Teste/itbam/back/src/main/java/com/itbam/lojavirtual/config/SwaggerConfig.java

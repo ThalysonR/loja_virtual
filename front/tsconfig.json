@@ -9,7 +9,7 @@
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true,
     "lib": ["es6", "dom"],
-    "typeRoots": ["node_modules/@types", "typings.d.ts"]
+    "typeRoots": ["node_modules/@types"]
   },
   "exclude": ["node_modules", "src/main.aot.ts"]
 }

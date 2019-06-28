@@ -1,32 +1,47 @@
-<div class="container">
-  <div class="row">
-    <div *ngFor="let produto of produtos">
-      <produto-card [produto]="produto"></produto-card>
+<div class="container full-height">
+  <div #modal class="modal">
+    <div class="modal-content">
+      <h4>Excluir Produto</h4>
+      <p>Deseja excluir {{ produtoRemover.nome }}?</p>
+    </div>
+    <div class="modal-footer">
+      <button (click)="excluirProduto()" class="btn waves-effect waves-light">
+        Excluir
+        <i class="material-icons right">close</i>
+      </button>
     </div>
   </div>
-  <div class="row">
-    <div class="col s12">
-      <ul class="pagination">
-        <li [ngClass]="{ disabled: paginaAtual == 0 }">
-          <a
-            [routerLink]="['/produto']"
-            [queryParams]="{ page: paginaAtual - 1 }"
-            [ngClass]="{ disabledA: paginaAtual == 0 }"
-            ><i class="material-icons">chevron_left</i></a
-          >
-        </li>
-        <li *ngFor="let pagina of paginas" [ngClass]="{ active: pagina === paginaAtual }">
-          <a [routerLink]="['/produto']" [queryParams]="{ page: pagina }">{{ pagina }}</a>
-        </li>
-        <li [ngClass]="{ disabled: paginaAtual == totalPaginas - 1 }">
-          <a
-            [routerLink]="['/produto']"
-            [queryParams]="{ page: paginaAtual + 1 }"
-            [ngClass]="{ disabledA: paginaAtual == totalPaginas - 1 }"
-            ><i class="material-icons">chevron_right</i></a
-          >
-        </li>
-      </ul>
+
+  <div *ngIf="produtos.length > 0" class="flex-col">
+    <div class="row">
+      <div *ngFor="let produto of produtos">
+        <produto-card [produto]="produto" (remover)="modalConfirma($event)"></produto-card>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12">
+        <ul class="pagination">
+          <li [ngClass]="{ disabled: paginaAtual == 0 }">
+            <a
+              [routerLink]="['/produto']"
+              [queryParams]="{ page: paginaAtual - 1 }"
+              [ngClass]="{ disabledA: paginaAtual == 0 }"
+              ><i class="material-icons">chevron_left</i></a
+            >
+          </li>
+          <li *ngFor="let pagina of paginas" [ngClass]="{ active: pagina === paginaAtual }">
+            <a [routerLink]="['/produto']" [queryParams]="{ page: pagina }">{{ pagina }}</a>
+          </li>
+          <li [ngClass]="{ disabled: paginaAtual == totalPaginas - 1 }">
+            <a
+              [routerLink]="['/produto']"
+              [queryParams]="{ page: paginaAtual + 1 }"
+              [ngClass]="{ disabledA: paginaAtual == totalPaginas - 1 }"
+              ><i class="material-icons">chevron_right</i></a
+            >
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

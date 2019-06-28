@@ -1,3 +1,17 @@
 .disabledA {
   pointer-events: none;
 }
+
+.full-height {
+  height: 90%;
+}
+
+.flex-col {
+  display: flex;
+  flex-flow: column nowrap;
+  height: 90%;
+  justify-content: space-between;
+  & > div {
+    margin: 0;
+  }
+}

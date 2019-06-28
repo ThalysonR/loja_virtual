@@ -11,5 +11,6 @@
     "lib": ["es6", "dom"],
     "typeRoots": ["node_modules/@types"]
   },
-  "exclude": ["node_modules", "src/main.aot.ts"]
+  "exclude": ["node_modules", "src/main.aot.ts"],
+  "files": ["typings.d.ts"]
 }

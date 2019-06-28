@@ -22,6 +22,7 @@
     "@angular/upgrade": "~6.1.10",
     "core-js": "~2.5",
     "materialize-css": "^1.0.0",
+    "ng2-currency-mask": "^5.3.1",
     "rxjs": "~6.3",
     "rxjs-compat": "^6.5.2",
     "zone.js": "~0.8"

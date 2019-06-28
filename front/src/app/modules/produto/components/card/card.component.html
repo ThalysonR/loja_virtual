@@ -1,11 +1,25 @@
 <div class="col s4">
-    <div class="card horizontal">
-        <div class="card-stacked">
-            <span class="card-title">{{ produto.nome | titlecase }}</span>
-            <div class="card-content row">
-                <span class="col s8">{{ produto.descricao }}</span>
-                <span class="col s4">{{ produto.preco | currency: 'BRL':'symbol':'1.2-2' }}</span>
-            </div>
-        </div>
+  <div class="card horizontal">
+    <div class="card-stacked">
+      <div class="row">
+        <span class="card-title col s6">{{ produto.nome | titlecase }}</span>
+        <span class="col s2"
+          ><a [routerLink]="['/produto/form']" [queryParams]="{ edit: produto.id }"
+            ><i class="material-icons">edit</i></a
+          ></span
+        >
+        <span class="col s2"
+          ><a
+            ><i class="material-icons" style="cursor: pointer" (click)="remover.emit(produto)"
+              >delete</i
+            ></a
+          ></span
+        >
+      </div>
+      <div class="card-content row">
+        <span class="col s8">{{ produto.descricao }}</span>
+        <span class="col s4">{{ produto.preco | currency: 'BRL':'symbol':'1.2-2' }}</span>
+      </div>
     </div>
+  </div>
 </div>

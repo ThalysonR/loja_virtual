@@ -1,1 +1,16 @@
-@import "~materialize-css/dist/css/materialize.min.css";
+@import '~materialize-css/dist/css/materialize.min.css';
+
+.toast-success {
+  background-color: green;
+  color: white;
+}
+
+.toast-error {
+  color: white;
+  background-color: red;
+}
+
+html,
+body {
+  height: 100%;
+}

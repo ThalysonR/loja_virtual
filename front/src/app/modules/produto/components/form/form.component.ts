@@ -51,15 +51,17 @@ export class FormComponent implements OnInit {
       );
   }
 
-  ngOnInit() {
+  private verificaEdit() {
     this._activatedRoute.queryParams
       .pipe(
         flatMap(params => {
+          console.log(params);
           if (params.edit) return this._produtoController.getProdutoUsingGET(+params.edit);
           return of({});
         }),
       )
       .subscribe(produto => {
+        console.log(produto);
         if (produto['nome']) {
           this.produtoForm.setValue({
             nome: produto['nome'] || '',
@@ -69,7 +71,16 @@ export class FormComponent implements OnInit {
           this.edit = true;
           this.idEdit = produto['id'];
           this.titulo = `Editar ${produto['nome']}`;
+        } else {
+          this.produtoForm.reset();
+          this.titulo = 'Cadastrar novo produto';
+          this.edit = false;
         }
       });
+  }
+
+  ngOnInit() {
+    this.verificaEdit();
+    // this._router.events.subscribe(event => this.verificaEdit());
   }
 }

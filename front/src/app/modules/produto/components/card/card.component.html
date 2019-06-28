@@ -3,12 +3,12 @@
     <div class="card-stacked">
       <div class="row">
         <span class="card-title col s6">{{ produto.nome | titlecase }}</span>
-        <span class="col s2"
+        <span class="col s1 offset-s3"
           ><a [routerLink]="['/produto/form']" [queryParams]="{ edit: produto.id }"
             ><i class="material-icons">edit</i></a
           ></span
         >
-        <span class="col s2"
+        <span class="col s1"
           ><a
             ><i class="material-icons" style="cursor: pointer" (click)="remover.emit(produto)"
               >delete</i

@@ -31,6 +31,7 @@
     "@babel/core": "^7.2.2",
     "@ngtools/webpack": "^6.1.10",
     "@types/core-js": "^2.5.0",
+    "@types/materialize-css": "^1.0.6",
     "@types/node": "^10.12.15",
     "angular2-router-loader": "^0.3.5",
     "angular2-template-loader": "^0.6.2",

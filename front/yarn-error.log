@@ -2,7 +2,7 @@ Arguments:
   /usr/bin/node /usr/bin/yarn install
 
 PATH: 
-  /usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/opt/android-sdk/platform-tools:/var/lib/flatpak/exports/bin:/opt/flutter/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/opt/sonar-scanner/bin
+  /usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
 
 Yarn version: 
   1.16.0
@@ -14,7 +14,7 @@ Platform:
   linux x64
 
 Trace: 
-  Error: EACCES: permission denied, unlink '/home/tcastro/Teste/itbam/front/node_modules/.bin/acorn'
+  Error: EACCES: permission denied, mkdir '/mnt/disk2/Projetos/loja_virtual/front/node_modules/abbrev'
 
 npm manifest: 
   {
@@ -23,7 +23,7 @@ npm manifest:
     "main": "index.js",
     "license": "MIT",
     "scripts": {
-      "start": "webpack-dev-server --config config/webpack.dev.js --inline --hot --progress --port 3000",
+      "start": "webpack-dev-server --config config/webpack.dev.js --inline --hot --progress --host 0.0.0.0 --port 3000",
       "build": "NODE_ENV=production webpack --config config/webpack.prod.js"
     },
     "dependencies": {

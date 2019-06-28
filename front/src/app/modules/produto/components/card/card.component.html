@@ -1,0 +1,11 @@
+<div class="col s4">
+    <div class="card horizontal">
+        <div class="card-stacked">
+            <span class="card-title">{{ produto.nome | titlecase }}</span>
+            <div class="card-content row">
+                <span class="col s8">{{ produto.descricao }}</span>
+                <span class="col s4">{{ produto.preco | currency: 'BRL':'symbol':'1.2-2' }}</span>
+            </div>
+        </div>
+    </div>
+</div>

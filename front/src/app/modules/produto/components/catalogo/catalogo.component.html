@@ -12,36 +12,45 @@
     </div>
   </div>
 
-  <div *ngIf="produtos.length > 0" class="flex-col">
-    <div class="row">
-      <div *ngFor="let produto of produtos">
-        <produto-card [produto]="produto" (remover)="modalConfirma($event)"></produto-card>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col s12">
-        <ul class="pagination">
-          <li [ngClass]="{ disabled: paginaAtual == 0 }">
-            <a
-              [routerLink]="['/produto']"
-              [queryParams]="{ page: paginaAtual - 1 }"
-              [ngClass]="{ disabledA: paginaAtual == 0 }"
-              ><i class="material-icons">chevron_left</i></a
-            >
-          </li>
-          <li *ngFor="let pagina of paginas" [ngClass]="{ active: pagina === paginaAtual }">
-            <a [routerLink]="['/produto']" [queryParams]="{ page: pagina }">{{ pagina }}</a>
-          </li>
-          <li [ngClass]="{ disabled: paginaAtual == totalPaginas - 1 }">
-            <a
-              [routerLink]="['/produto']"
-              [queryParams]="{ page: paginaAtual + 1 }"
-              [ngClass]="{ disabledA: paginaAtual == totalPaginas - 1 }"
-              ><i class="material-icons">chevron_right</i></a
-            >
-          </li>
-        </ul>
-      </div>
+  <div
+    *ngIf="produtos.length > 0; then produtosCarregados; else semProdutos"
+    class="flex-col"
+  ></div>
+</div>
+
+<ng-template #produtosCarregados>
+  <div class="row">
+    <div *ngFor="let produto of produtos">
+      <produto-card [produto]="produto" (remover)="modalConfirma($event)"></produto-card>
     </div>
   </div>
-</div>
+  <div class="row">
+    <div class="col s12">
+      <ul class="pagination">
+        <li [ngClass]="{ disabled: paginaAtual == 0 }">
+          <a
+            [routerLink]="['/produto']"
+            [queryParams]="{ page: paginaAtual - 1 }"
+            [ngClass]="{ disabledA: paginaAtual == 0 }"
+            ><i class="material-icons">chevron_left</i></a
+          >
+        </li>
+        <li *ngFor="let pagina of paginas" [ngClass]="{ active: pagina === paginaAtual }">
+          <a [routerLink]="['/produto']" [queryParams]="{ page: pagina }">{{ pagina }}</a>
+        </li>
+        <li [ngClass]="{ disabled: paginaAtual == totalPaginas - 1 }">
+          <a
+            [routerLink]="['/produto']"
+            [queryParams]="{ page: paginaAtual + 1 }"
+            [ngClass]="{ disabledA: paginaAtual == totalPaginas - 1 }"
+            ><i class="material-icons">chevron_right</i></a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #semProdutos>
+  <h1>Não há produtos cadastrados</h1>
+</ng-template>

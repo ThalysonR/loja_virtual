@@ -36,7 +36,7 @@ Foi disponibilizado um arquivo **docker-compose.yml** contendo os conteiners nec
 
 O front-end será executado na porta 3000 (http://localhost:3000) e o back-end será executado na porta 8080 (http://localhost:8080).
 
-### Manual
+### Execução Local
 
 #### Front-end
 
